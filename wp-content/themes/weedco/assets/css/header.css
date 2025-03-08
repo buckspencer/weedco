@@ -41,9 +41,25 @@ html {
     display: none;
 }
 
+.mobile-logo-size {
+    height: 60px;
+    width: auto;
+}
+
 .site-logo {
     height: 50px;
     width: auto;
+}
+
+/* Site title styles (if text logo is used instead of image) */
+.site-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.site-title a {
+    color: #333;
+    text-decoration: none;
 }
 
 /* Navigation */
@@ -66,6 +82,7 @@ html {
     cursor: pointer;
     margin-left: 0;
     z-index: 1001;
+    padding-left: 1rem;
 }
 
 .hamburger-box {
@@ -311,7 +328,7 @@ html {
     }
 
     .header-container {
-        padding: 1rem;
+       padding: 1rem;
     }
 
     .hamburger-menu {

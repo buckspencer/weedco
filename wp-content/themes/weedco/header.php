@@ -56,7 +56,7 @@
 					<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="WeedCo Logo" class="site-logo">
 				</a>
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link mobile-logo">
-					<img src="<?php echo get_theme_file_uri('assets/images/mobile-logo.png'); ?>" alt="WeedCo Logo" class="site-logo">
+					<img src="<?php echo get_theme_file_uri('assets/images/mobile-logo.png'); ?>" alt="WeedCo Logo" class="site-logo mobile-logo-size">
 				</a>
 			</div>
 
