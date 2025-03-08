@@ -48,6 +48,9 @@
 				</div>
 			</nav>
 
+			<!-- Mobile phone number (only visible on mobile) -->
+			<a href="tel:520-549-1390" class="phone-number-mobile">520-549-1390</a>
+			
 			<div class="site-branding">
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link desktop-logo">
 					<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="WeedCo Logo" class="site-logo">

@@ -150,14 +150,17 @@ add_action('init', 'weedco_register_menus');
  * Enqueue scripts and styles.
  */
 function weedco_scripts() {
-	wp_enqueue_style('weedco-style', get_stylesheet_uri(), array(), WEEDCO_VERSION);
-	wp_enqueue_style('weedco-header', get_template_directory_uri() . '/assets/css/header.css', array(), WEEDCO_VERSION);
-
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	wp_enqueue_style( 'weedco-style', get_stylesheet_uri(), array(), WEEDCO_VERSION );
+	wp_enqueue_style( 'weedco-custom', get_template_directory_uri() . '/assets/css/custom.css', array(), WEEDCO_VERSION );
+	wp_enqueue_style( 'weedco-header', get_template_directory_uri() . '/assets/css/header.css', array(), WEEDCO_VERSION );
+	
+	wp_enqueue_script( 'weedco-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), WEEDCO_VERSION, true );
+	
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action('wp_enqueue_scripts', 'weedco_scripts');
+add_action( 'wp_enqueue_scripts', 'weedco_scripts' );
 
 /**
  * Implement the Custom Header feature.
