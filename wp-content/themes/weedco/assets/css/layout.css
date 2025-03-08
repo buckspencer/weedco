@@ -1,0 +1,48 @@
+/**
+ * Layout Styles
+ * Handles the main structural elements of the site
+ */
+
+/* Main site structure */
+body {
+    /* Use CSS custom property for header height with fallback */
+    padding-top: var(--header-height, 80px);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+#primary {
+    flex: 1 0 auto;
+}
+
+.site-main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.site-footer {
+    flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-main {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-main {
+        padding: 1rem;
+    }
+} 
