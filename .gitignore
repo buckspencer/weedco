@@ -6,20 +6,67 @@
 /wp-content/backup-db/
 /wp-content/cache/
 /wp-content/backups/
+/wp-content/plugins/
+/wp-content/themes/*
+!/wp-content/themes/weedco/
 
 # WordPress core files
-wp-config.php
 wp-config-sample.php
-index.php
 license.txt
 readme.html
 wp-*.php
 xmlrpc.php
 
-# WP content (except our theme)
-/wp-content/plugins/
-/wp-content/themes/*
-!/wp-content/themes/weedco/
+# Development dependencies
+/node_modules/
+/vendor/
+composer.lock
+package-lock.json
+
+# Environment files
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Log files
+*.log
+error_log
+access_log
+
+# Docker volumes
+db_data/
+
+# Keep these files
+!.gitignore
+!docker-compose.yml
+!Dockerfile
+!README.md
+!style.css
+!index.php
+!functions.php
+!header.php
+!footer.php
+!assets/
+!inc/
+!template-parts/
+!js/
+!languages/
 
 # Node modules and build files
 node_modules/
