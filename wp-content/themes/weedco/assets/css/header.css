@@ -1,3 +1,12 @@
+/* Hide WP Admin Bar for debugging */
+html {
+    margin-top: 0 !important;
+}
+
+#wpadminbar {
+    display: none !important;
+}
+
 /* Header Styles */
 .site-header {
     background: #fff;
