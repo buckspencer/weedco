@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 		<?php
 		if ( have_posts() ) :
 
@@ -49,8 +49,8 @@ get_header();
 
 		endif;
 		?>
-
-	</main><!-- #main -->
+	</main>
+</div>
 
 <?php
 get_sidebar();

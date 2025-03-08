@@ -1,12 +1,10 @@
 # Use WordPress with PHP 8.1 as base image
 FROM wordpress:php8.1
 
-# Install system dependencies
+# Install only essential system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
-    nodejs \
-    npm \
     curl
 
 # Install Composer
@@ -18,12 +16,19 @@ WORKDIR /var/www/html/wp-content/themes/weedco
 # Copy theme files
 COPY . .
 
-# Install theme dependencies
-RUN composer install
-RUN npm install
+# Configure Composer to allow the required plugin
+RUN composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
 
-# Set permissions
+# Install composer dependencies
+RUN composer install
+
+# Set proper permissions for theme directory only
 RUN chown -R www-data:www-data /var/www/html/wp-content/themes/weedco
+RUN find /var/www/html/wp-content/themes/weedco -type d -exec chmod 755 {} \;
+RUN find /var/www/html/wp-content/themes/weedco -type f -exec chmod 644 {} \;
+
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
 # Expose port 80
 EXPOSE 80

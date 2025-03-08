@@ -68,3 +68,76 @@ $ npm install
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+
+# WeedCo WordPress Theme
+
+A custom WordPress theme for WeedCo.
+
+## Development Setup
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Local Development
+
+1. Clone this repository:
+```bash
+git clone [your-repo-url]
+cd weedco
+```
+
+2. Start the development environment:
+```bash
+docker compose up -d
+```
+
+3. Access WordPress:
+- Site: http://localhost:8000
+- Admin: http://localhost:8000/wp-admin
+
+### Theme Development
+
+The theme files are located in the root directory and will be mounted to `/wp-content/themes/weedco` in the WordPress container.
+
+### Docker Configuration
+
+- `docker-compose.yml`: Defines the WordPress and MySQL services
+- WordPress runs on port 8000
+- MySQL database is persisted in a Docker volume
+- Theme files are mounted directly into the WordPress container
+
+### Database Configuration
+
+- Database Name: wordpress
+- Username: wordpress
+- Password: wordpress
+- Host: db:3306
+
+### Stopping the Environment
+
+```bash
+docker compose down
+```
+
+To completely reset (including database):
+```bash
+docker compose down -v
+```
+
+## Theme Structure
+
+- `style.css`: Theme stylesheet and metadata
+- `index.php`: Main template file
+- Additional WordPress template files will be added as needed
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request
+
+## License
+
+This theme is licensed under the GPL v2 or later.
