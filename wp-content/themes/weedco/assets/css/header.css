@@ -1,7 +1,5 @@
 /* Hide WP Admin Bar for debugging */
-html {
-    margin-top: 0 !important;
-}
+
 
 #wpadminbar {
     display: none !important;
@@ -338,6 +336,10 @@ html {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    body {
+        margin-top: 70px; /* Adjust based on header height at this breakpoint */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -382,6 +384,10 @@ html {
         width: 18px;
         height: 24px;
         right: -9px;
+    }
+
+    body {
+        margin-top: 60px; /* Adjust based on header height at this breakpoint */
     }
 }
 

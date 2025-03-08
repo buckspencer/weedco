@@ -76,6 +76,7 @@ html {
  */
 body {
 	margin: 0;
+	margin-top: 80px; /* Add margin to account for fixed header */
 }
 
 /**
@@ -470,6 +471,19 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+}
+
+/* Responsive body margins */
+@media (max-width: 1200px) {
+	body {
+		margin-top: 70px; /* Adjust for smaller header on tablets */
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		margin-top: 60px; /* Adjust for smaller header on mobile */
+	}
 }
 
 hr {
