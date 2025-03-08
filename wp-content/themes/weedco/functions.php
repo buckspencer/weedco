@@ -152,6 +152,7 @@ add_action('init', 'weedco_register_menus');
 function weedco_scripts() {
 	wp_enqueue_style( 'weedco-style', get_stylesheet_uri(), array(), WEEDCO_VERSION );
 	wp_enqueue_style( 'weedco-header', get_template_directory_uri() . '/assets/css/header.css', array(), WEEDCO_VERSION );
+	wp_enqueue_style( 'weedco-footer', get_template_directory_uri() . '/assets/css/footer.css', array(), WEEDCO_VERSION );
 	
 	wp_enqueue_script( 'weedco-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), WEEDCO_VERSION, true );
 	
