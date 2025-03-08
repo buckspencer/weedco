@@ -135,24 +135,29 @@ function weedco_widgets_init() {
 add_action( 'widgets_init', 'weedco_widgets_init' );
 
 /**
+ * Register navigation menus
+ */
+function weedco_register_menus() {
+	register_nav_menus(
+		array(
+			'primary-menu' => esc_html__('Primary Menu', 'weedco'),
+		)
+	);
+}
+add_action('init', 'weedco_register_menus');
+
+/**
  * Enqueue scripts and styles.
  */
 function weedco_scripts() {
-	// Main stylesheet
-	wp_enqueue_style( 'weedco-style', get_stylesheet_uri(), array(), WEEDCO_VERSION );
-	wp_style_add_data( 'weedco-style', 'rtl', 'replace' );
+	wp_enqueue_style('weedco-style', get_stylesheet_uri(), array(), WEEDCO_VERSION);
+	wp_enqueue_style('weedco-header', get_template_directory_uri() . '/assets/css/header.css', array(), WEEDCO_VERSION);
 
-	// Custom styles
-	wp_enqueue_style( 'weedco-custom', get_template_directory_uri() . '/assets/css/custom.css', array(), WEEDCO_VERSION );
-
-	// Navigation script
-	wp_enqueue_script( 'weedco-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), WEEDCO_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'weedco_scripts' );
+add_action('wp_enqueue_scripts', 'weedco_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -180,4 +185,50 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Create default primary menu on theme activation
+ */
+function weedco_create_default_menu() {
+	$menu_name = 'Primary Menu';
+	$menu_exists = wp_get_nav_menu_object($menu_name);
+
+	if (!$menu_exists) {
+		$menu_id = wp_create_nav_menu($menu_name);
+
+		// Create menu items
+		$menu_items = array(
+			'Weed Control' => home_url('/weed-control'),
+			'Pest Control' => home_url('/pest-control'),
+			'Termites' => home_url('/termites'),
+			'About Us' => home_url('/about-us'),
+			'Contact Us' => home_url('/contact-us'),
+			'Pest Profiles' => home_url('/pest-profiles'),
+		);
+
+		foreach ($menu_items as $label => $url) {
+			wp_update_nav_menu_item($menu_id, 0, array(
+				'menu-item-title' => $label,
+				'menu-item-url' => $url,
+				'menu-item-status' => 'publish',
+				'menu-item-type' => 'custom',
+			));
+		}
+
+		// Assign menu to primary-menu location
+		$locations = get_theme_mod('nav_menu_locations');
+		$locations['primary-menu'] = $menu_id;
+		set_theme_mod('nav_menu_locations', $locations);
+	}
+}
+add_action('after_switch_theme', 'weedco_create_default_menu');
+
+// Temporary function to create menu - Remove after menu is created
+function weedco_temp_create_menu() {
+	if (!get_option('weedco_menu_created')) {
+		weedco_create_default_menu();
+		update_option('weedco_menu_created', true);
+	}
+}
+add_action('init', 'weedco_temp_create_menu');
 
