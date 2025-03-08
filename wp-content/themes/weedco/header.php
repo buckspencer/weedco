@@ -49,8 +49,11 @@
 			</nav>
 
 			<div class="site-branding">
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link">
-					<img src="<?php echo get_theme_file_uri('assets/images/Weed-Co.-Logo-1.png'); ?>" alt="WeedCo Logo" class="site-logo">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link desktop-logo">
+					<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="WeedCo Logo" class="site-logo">
+				</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link mobile-logo">
+					<img src="<?php echo get_theme_file_uri('assets/images/mobile-logo.png'); ?>" alt="WeedCo Logo" class="site-logo">
 				</a>
 			</div>
 

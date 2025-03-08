@@ -28,6 +28,10 @@
     display: block;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 .site-logo {
     height: 50px;
     width: auto;
@@ -194,6 +198,14 @@
     .site-branding {
         margin-left: 0;
         order: 0; /* Reset order for mobile */
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
     }
 
     .main-navigation {
