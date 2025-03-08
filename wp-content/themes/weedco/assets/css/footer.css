@@ -32,7 +32,7 @@
     Helvetica,
     sans-serif;
   color: #fff;
-  font-weight: 700;
+  font-weight: 400;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
@@ -59,16 +59,34 @@
   text-decoration: none;
 }
 
-.phone-number {
-  color: #0fb5b6;
-  font-family:
-    Open Sans,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
-  font-size: 24px;
+/* Header Actions */
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  padding-right: 1rem;
+}
+
+.footer-actions .phone-number {
+  display: block; /* Show in header actions on desktop */
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-actions .request-quote-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0fb5b6;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 4px;
 }
 
 .quote-button {
@@ -105,8 +123,35 @@
     gap: 20px;
   }
   
+  .footer-actions {
+    gap: 1rem;
+  }
+  
+  .footer-actions .phone-number {
+    font-size: 18px;
+  }
+  
+  .footer-actions .request-quote-button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  
   .quote-button {
     padding: 15px 18px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .footer-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-nav {
+    order: 3;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -132,9 +177,29 @@
     display: none;
   }
 
-  .phone-number {
-    font-size: 28px;
-    margin: 10px 0;
+  .footer-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+    padding-right: 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-actions .phone-number {
+    font-size: 20px;
+    margin: 5px 0;
+    display: block;
+  }
+
+  .footer-actions .request-quote-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
   }
 
   .quote-button {
@@ -146,9 +211,56 @@
     max-width: 100%;
     margin-top: 30px;
     font-size: 16px;
+    width: auto;
   }
   
   .copyright-text {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    padding: 20px 15px;
+  }
+  
+  .footer-content {
+    gap: 15px;
+  }
+  
+  .footer-logo {
+    width: 200px;
+  }
+  
+  .footer-nav {
+    display: none;
+  }
+  
+  .nav-link {
+    display: none;
+  }
+  
+  .footer-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-actions .phone-number {
+    font-size: 18px;
+  }
+  
+  .footer-actions .request-quote-button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .license-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+  
+  .copyright-text {
+    font-size: 14px;
   }
 } 

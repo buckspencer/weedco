@@ -27,8 +27,13 @@
 					<a href="#contact" class="nav-link">Contact Us</a>
 					<a href="#pest-profiles" class="nav-link">Pest Profiles</a>
 				</nav>
-				<a href="tel:520-549-1390" class="phone-number">520-549-1390</a>
-				<a href="#quote" class="quote-button">Request a Quote</a>
+				<div class="footer-actions">
+					<a href="tel:520-549-1390" class="phone-number">520-549-1390</a>
+					<a href="<?php echo esc_url(home_url('/request-a-quote')); ?>" class="request-quote-button">
+						Request a Quote
+						<?php include get_theme_file_path('assets/images/shield.svg'); ?>
+					</a>
+				</div>
 			</div>
 			<p class="license-text">
 				WeedCo is licensed with the Arizona Department of Agriculture and Office
