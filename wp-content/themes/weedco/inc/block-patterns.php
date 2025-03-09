@@ -109,9 +109,9 @@ function weedco_register_block_patterns() {
                 'title'       => __('Complete Solutions Section', 'weedco'),
                 'description' => __('A section with text content on the left and an image on the right', 'weedco'),
                 'categories'  => array('weedco', 'content'),
-                'content'     => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"className":"weedco-solutions-section"} -->
-<div class="wp-block-group alignfull weedco-solutions-section" style="padding-top:0;padding-bottom:0">
-    <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"0","left":"0"}}},"className":"solutions-columns"} -->
+                'content'     => '<!-- wp:group {"align":"full","className":"weedco-solutions-section"} -->
+<div class="wp-block-group alignfull weedco-solutions-section">
+    <!-- wp:columns {"verticalAlignment":"center","align":"wide","className":"solutions-columns"} -->
     <div class="wp-block-columns alignwide are-vertically-aligned-center solutions-columns">
         <!-- wp:column {"verticalAlignment":"center","width":"50%","style":{"spacing":{"padding":{"top":"5rem","right":"2rem","bottom":"5rem","left":"2rem"}}}} -->
         <div class="wp-block-column is-vertically-aligned-center" style="padding-top:5rem;padding-right:2rem;padding-bottom:5rem;padding-left:2rem;flex-basis:50%">
@@ -133,8 +133,8 @@ function weedco_register_block_patterns() {
         </div>
         <!-- /wp:column -->
 
-        <!-- wp:column {"verticalAlignment":"center","width":"30%","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"className":"solutions-image-column"} -->
-        <div class="wp-block-column is-vertically-aligned-center solutions-image-column" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;flex-basis:30%">
+        <!-- wp:column {"verticalAlignment":"center","width":"30%","className":"solutions-image-column"} -->
+        <div class="wp-block-column is-vertically-aligned-center solutions-image-column" style="flex-basis:30%">
             <!-- wp:cover {"url":"data:image/svg+xml,%3Csvg width=\'800\' height=\'800\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'800\' height=\'800\' fill=\'%230e2949\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'36px\' fill=\'%23ffffff\'%3ESolutions Image%3C/text%3E%3C/svg%3E","dimRatio":0,"minHeight":600,"minHeightUnit":"px","className":"solutions-image"} -->
             <div class="wp-block-cover solutions-image" style="min-height:600px">
                 <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
@@ -143,11 +143,6 @@ function weedco_register_block_patterns() {
                 </div>
             </div>
             <!-- /wp:cover -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column {"verticalAlignment":"center","width":"20%","backgroundColor":"#0fb5b6","className":"teal-background-column"} -->
-        <div class="wp-block-column is-vertically-aligned-center teal-background-column has-background" style="background-color:#0fb5b6;flex-basis:20%">
         </div>
         <!-- /wp:column -->
     </div>

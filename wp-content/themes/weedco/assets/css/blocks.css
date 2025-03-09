@@ -90,6 +90,18 @@
     position: relative;
 }
 
+/* Add teal background on the right side */
+.weedco-solutions-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #0fb5b6;
+    z-index: 1;
+}
+
 /* Ensure columns have no margin and touch each other */
 .solutions-columns {
     position: relative;
